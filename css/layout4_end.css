@@ -1,0 +1,202 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+body{
+  font-weight: 300;
+  color: #222;
+}
+
+
+/* Header_______________________ */
+
+/* utilMenu */
+.utilMenu{
+  /* border: 1px solid red; */
+  width: 1200px;
+  margin: auto;
+  text-align: right;
+}
+.utilMenu a{
+  padding: 0 5px;
+  font-size: 13px;
+  color: #666;
+  /* border-left: 1px solid #ccc;  */
+}
+/* .utilMenu a:first-child{border-left: none;} */
+
+.utilMenu a:not(:first-child){border-left: 1px solid #ccc;}
+.utilMenu a:hover{color: crimson;}
+
+
+/* Logo & Topmenu */
+nav{  /* 첫번째 부모:가로 100% */
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  margin-top: 20px;
+}
+
+.nav_in{  /* 컨텐츠가로크기,가운데정렬 */
+  /* border: 1px solid red; */
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.logo h1{
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 5px;
+}
+.logo h1 strong{
+  display: block;
+  font-weight: 500;
+  font-size: 18px;
+  color: crimson
+}
+
+.gnb{
+  display: flex;
+}
+.gnb li a{
+  display: block;
+  width: 110px;
+  height: 70px;
+  line-height: 70px;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.3s;
+}
+/* .gnb li a:hover{
+  background-color: #ccc;
+  color: #000;
+  font-weight: bold;
+} */
+.gnb li a:hover:not(.active){  /* 현재위치인 active클래스를 제외한 나머지에 오버를 했을때 */
+  background-color: #ccc;
+  color: #000;
+  font-weight: bold;
+}
+.gnb li a.active{  /* 현재 위치 활성화 */
+  background-color: crimson;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+/* Main_______________________ */
+
+main{
+  width: 100%;
+  height: 500px;
+  background: url(../image/main1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  transition: 0.5s;
+}
+main:hover{background-image: url(../image/main2.jpg);}
+
+
+/* Section_______________________ */
+
+section{
+  width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}
+section h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+}
+section div{font-family: 'Montserrat', sans-serif;}
+.content1, .content2, .content3{
+  width: inherit;
+  margin: 40px 0;
+}
+
+/*CONTENT 1 - Float*/
+.content1{
+  border: 1px solid #808080;
+  overflow: hidden;
+}
+.content1 div{
+  float: left;
+  width: 300px;
+  height: 250px;
+  line-height: 250px;
+  background-color: #ddd;
+  box-sizing: border-box;
+}
+.content1 div:not(:nth-child(4),:last-child){
+  border-right: 1px solid #808080;
+}
+.content1 div:nth-child(-n+4){
+  border-bottom: 1px solid #808080;
+}
+
+
+/*CONTENT 2 -Flexible*/
+.content2{
+  height: 200px;
+  display: flex;
+}
+.content2 div{
+  height: inherit;
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content2 div:nth-child(1){
+  background-color: royalblue;
+  flex: 1;
+}
+.content2 div:nth-child(2){
+  background-color: yellowgreen;
+  flex: 2;
+}
+.content2 div:nth-child(3){
+  background-color: orange;
+  flex: 1;
+}
+
+
+/*CONTENT 3 - Grid*/
+.content3{
+  height: 300px;
+  display: grid;
+  /* grid-template-columns: 1fr 2fr 1fr 1fr 1fr; */
+  grid-template-columns:repeat(5, 1fr);
+  grid-column-gap:10px;
+}
+.content3 div{
+  background-color: #eee;
+  line-height: 300px;
+}
+.content3 div:nth-child(odd){background-color: #bbb}
+
+
+/* Footer_______________________ */
+
+footer{
+  background-color: #ccc;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+}
+address{
+  color: #666;
+  font-style: normal; /*address태그에 기본적으로 적용되는 기울임 해지*/
+}
+address span{
+  color: #000;
+  font-weight: 500;
+}
